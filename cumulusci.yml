@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '3.49.0'
+project:
+    name: TestingCCI
+    package:
+        name: TestingCCI
+        api_version: '52.0'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/TestingCCI/tests
+            options:
+                outputdir: robot/TestingCCI/results
+
+    robot_testdoc:
+        options:
+            path: robot/TestingCCI/tests
+            output: robot/TestingCCI/doc/TestingCCI_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
